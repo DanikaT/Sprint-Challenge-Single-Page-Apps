@@ -5,9 +5,8 @@ export default function CharacterCard(props) {
   return (
   <div className="character-card">
   
-  <h2>Hi my name is {props.name}</h2>
-   <h2>I am {props.status}</h2>   
-   <img src={props.image}></img>  
+  <h2>{props.name}</h2>   
+   <img src={props.image} alt="character-avatar"></img>  
   </div>
   );
 }

@@ -27,13 +27,29 @@ main {
 .grid-view div.card.ui {
   margin: 1.25rem;
 }
-/*
+
 .main-img {
   display: block;
   border-radius: 100%;
   margin: 0 auto;
-} */
+  padding: 1rem;
+  
+} 
 
 header h1 {
   text-align: center;
+}
+
+.styled-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.styled-nav a {
+  font-family: 'Permanent Marker', cursive;
+  padding: 1rem;
+ 
+  font-size: 1.3rem;
+  color: white;
 }

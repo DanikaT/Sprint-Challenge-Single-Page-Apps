@@ -1,23 +1,28 @@
 import React from "react";
-import Header from "./components/Header.js";
 import { Route, Switch, Link } from 'react-router-dom';
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import CharacterCard from "./components/CharacterCard";
+import styled from "styled-components";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
-
+const styledNav = styled.nav`
+display: flex;
+text-decoration: none;
+`;
 
 
 export default function App() {
   return (
     <div className="App">
-<nav>
+<nav className="styled-nav">
   <Link to="/">
-    <h1 className="welcome-page">Home</h1>
+    <p className="welcome-page">Home</p>
   </Link>
   <div className="nav-links">
     <Link to="/character-list">
-      <h1>Characters</h1>
+      <p>Characters</p>
     </Link>
   </div>
 </nav>

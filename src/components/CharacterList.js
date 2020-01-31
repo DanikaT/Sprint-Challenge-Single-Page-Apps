@@ -3,11 +3,16 @@ import CharacterCard from "./CharacterCard";
 import axios from "axios";
 import styled from "styled-components";
 
+
 const CharacterListDiv =styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
 padding: 1rem;
+`;
+
+const HeaderSection = styled.section`
+text-align: center;
 `;
 
 
@@ -41,9 +46,7 @@ export default function CharacterList(props) {
         />
         ))
         )
-      }
-      
-     
+      } 
    </CharacterListDiv>
   )
 }

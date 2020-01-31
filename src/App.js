@@ -1,53 +1,37 @@
-import React, {useState, useEffect} from "react";
-import CharacterList from "./components/CharacterList";
+import React from "react";
 import Header from "./components/Header.js";
-import axios from "axios";
-import styled from "styled-components";
+import { Route, Switch, Link } from 'react-router-dom';
+import WelcomePage from "./components/WelcomePage";
+import CharacterList from "./components/CharacterList";
+import CharacterCard from "./components/CharacterCard";
 
-const CharacterListDiv =styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-padding: 1rem;
-`;
+
 
 
 export default function App() {
-  const [characters, setCharacters] = useState([]);
-  
-  useEffect(() => {
-    axios.get("https://rickandmortyapi.com/api/character/")
-    .then(response => {
-       setCharacters(response.data.results);
-      console.log(response.data);
-    })
-
-  .catch(error => {
-    console.log("Uh ohhh! Where's my data??!!", error);
-});
-
-}, []);
-
-  
-  
-  
   return (
-    <main>
-      <Header />
-      <CharacterListDiv>
-      
-      {
-        (characters.map((character, key) => (
-          <CharacterList  
-          key={key}
-          name={character.name}
-          image={character.image}
-        />
-        ))
-        )
-      }
-    </CharacterListDiv>
-     
-    </main>
+    <div className="App">
+<nav>
+  <Link to="/">
+    <h1 className="welcome-page">Home</h1>
+  </Link>
+  <div className="nav-links">
+    <Link to="/character-list">
+      <h1>Characters</h1>
+    </Link>
+  </div>
+</nav>
+<Switch>
+  <Route exact path="/">
+    <WelcomePage />
+  </Route>
+  <Route exact path="/character-list">
+    <CharacterList/>
+  </Route>
+  <Route path="character-list/:characterId">
+    <CharacterCard/>
+  </Route>
+</Switch>
+    </div>
   );
 }

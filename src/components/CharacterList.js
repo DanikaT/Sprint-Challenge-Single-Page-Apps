@@ -11,12 +11,10 @@ justify-content: space-around;
 padding: 1rem;
 `;
 
-const HeaderSection = styled.section`
-text-align: center;
-`;
 
 
 export default function CharacterList(props) {
+  console.log(props);
   // TODO: Add useState to track data from useEffect
   const [characters, setCharacters] = useState([]);
   

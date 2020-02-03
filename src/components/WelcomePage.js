@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import "../welcomepage.css";
 
+
 export default function WelcomePage() {
   return (
     <section className="welcome-page">

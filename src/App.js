@@ -3,9 +3,9 @@ import { Route, Switch, Link } from 'react-router-dom';
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
 import CharacterCard from "./components/CharacterCard";
+import SearchForm from "./components/SearchForm";
 import styled from "styled-components";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+
 
 const styledNav = styled.nav`
 display: flex;
@@ -29,6 +29,9 @@ export default function App() {
 <Switch>
   <Route exact path="/">
     <WelcomePage />
+  </Route>
+  <Route exact path="/search-form">
+    <SearchForm />
   </Route>
   <Route exact path="/character-list">
     <CharacterList/>
